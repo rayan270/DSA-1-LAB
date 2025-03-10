@@ -5,21 +5,22 @@ int arr[100];
 
 void selection_sort(int arr[], int n){
     int i,j,small;
-    for (int i = 0; i <n; ++i){
+    for (int i = 0; i <n; i++){
         small=i;
-    
-        for (int j = 0; j < n; ++j){
-        
+
+        for (int j = i+1; j < n; j++){
+
             if (arr[j]<arr[small]){
 
-            small=arr[j];
+            small= j;
 
             }
-    swap(arr[i], arr[small]);
+
 
         }
+        swap(arr[i], arr[small]);
     }
-    
+
 }
 
 void solve(int tc)
@@ -29,12 +30,12 @@ void solve(int tc)
  for(i=0; i<n;i++){
     cin>>arr[i];
 
- } 
+ }
  selection_sort(arr,n);
- for (int i = 0; i < n; ++i)
+ for (int i = 0; i < n; i++)
    {
-    cout<<arr[i];
-   }  
+    cout<<arr[i]<<' ';
+   }
 }
 
 signed main()
@@ -43,7 +44,7 @@ signed main()
 
     int tc, tt=1;
     cin >> tt;
-    
+
     for(tc=1; tc<=tt; tc++)
     {
         solve(tc);
